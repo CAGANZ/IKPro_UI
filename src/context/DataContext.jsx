@@ -7,8 +7,6 @@ import * as Yup from "yup";
 import { Bounce, toast } from "react-toastify";
 import { baseUrl } from "../base";
 
-
-
 const showToast = (title, type = "success") => {
   toast[type](title, {
     position: "top-right",
@@ -192,9 +190,14 @@ export const DataProvider = ({ children }) => {
 
   const addHarcamaTalep = async (newHarcamaTalep) => {
     let url = `${baseUrl}Talep/harcamaTalepEkle`;
-    dispatch({ type: "addHarcamaTalep", newHarcamaTalep });
-    const response = await axios.post(url, newHarcamaTalep);
-    showToast("Harcama Talebi Oluşturuldu!");
+    
+    try {
+      const response = await axios.post(url, newHarcamaTalep);
+      dispatch({ type: "addHarcamaTalep", payload: response.data });
+      showToast("Harcama Talebi Oluşturuldu!");
+    } catch (error) {
+      showToast("Talep oluşturulamadı!");
+    }
   };
 
   const addAvansTalep = async (newAvansTalep) => {
@@ -387,7 +390,7 @@ export const DataProvider = ({ children }) => {
   });
 
   // Paket işlemleri
-  
+
   const addPaket = async (newPaket) => {
     dispatch({ type: "addPaket", newPaket });
     try {
@@ -621,7 +624,7 @@ export const DataProvider = ({ children }) => {
         updatedData
       );
       if (response.status === 200) {
-        alert("Durum Güncelleme Başarılı");       
+        alert("Durum Güncelleme Başarılı");
       }
     } catch (error) {
       console.error("Güncelleme hatası:", error);
@@ -881,7 +884,7 @@ export const DataProvider = ({ children }) => {
         updateSirketYonetici,
         updateOnayDurum,
         getAvansTalepler,
-        getPersoneller
+        getPersoneller,
       }}
     >
       {children}

@@ -1,0 +1,1 @@
+export const baseUrl="http://localhost:39282/api/"

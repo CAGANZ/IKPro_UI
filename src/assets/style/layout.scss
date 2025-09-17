@@ -1,0 +1,19 @@
+.layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+.side-bar-menu {
+    width: 250px;
+    background-color: #f4f4f4;
+    padding: 20px;
+    position: fixed;
+    height: 100%;
+}
+
+.page-content {
+    flex-grow: 1;
+    margin-left: 250px;
+    padding: 20px;
+    background-color: #fff;
+}

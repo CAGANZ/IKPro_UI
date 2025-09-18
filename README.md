@@ -1,5 +1,5 @@
 # İK Operasyonları Yönetim Uygulaması 
-
+## Front-end Projesi Reposu
 ![.NET](https://img.shields.io/badge/.NET-8.0-purple)
 ![React](https://img.shields.io/badge/React-18-blue)
 ![SQL%20Server](https://img.shields.io/badge/SQL%20Server-DB-red)

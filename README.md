@@ -19,7 +19,6 @@
   
 - [Kurulum](#kurulum)
   - [Gereksinimler](#gereksinimler)
-  - [Backend Kurulumu](#backend-kurulumu)
   - [Frontend Kurulumu](#frontend-kurulumu)
 
 ---

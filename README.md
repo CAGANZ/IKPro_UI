@@ -58,8 +58,7 @@ Onion Architecture’da domain kuralları merkezde tutulur, bağımlılıklar i�
 - **Backend API:** C# (.NET), ASP.NET Core  
 - **Frontend:** React.js, Tailwind CSS
 - **Veritabanı:** SQL Server  
-
-#Projenin Backend Reposuna : https://github.com/CAGANZ/IKPro_API adresinden ulaşabilirsiniz.
+- Projenin Backend Reposuna https://github.com/CAGANZ/IKPro_API adresinden ulaşabilirsiniz.
 ---
 
 ## Kurulum

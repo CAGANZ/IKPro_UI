@@ -1,5 +1,5 @@
 # İK Operasyonları Yönetim Uygulaması 
-## Front-end Projesi Reposu
+## Frontend Projesi Reposu
 ![.NET](https://img.shields.io/badge/.NET-8.0-purple)
 ![React](https://img.shields.io/badge/React-18-blue)
 ![SQL%20Server](https://img.shields.io/badge/SQL%20Server-DB-red)
@@ -70,7 +70,7 @@ Onion Architecture’da domain kuralları merkezde tutulur, bağımlılıklar i�
 - .NET SDK (Backend)
 - SQL Server (Veritabanı)
 
-### Backend Kurulumu
+### Frontend Kurulumu
 ```bash
 git clone https://github.com/CAGANZ/IKPro_UI.git
 cd IKPro_UI

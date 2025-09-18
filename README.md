@@ -1,8 +1,85 @@
-# React + Vite
+# İK Operasyonları Yönetim Uygulaması 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![.NET](https://img.shields.io/badge/.NET-8.0-purple)
+![React](https://img.shields.io/badge/React-18-blue)
+![SQL%20Server](https://img.shields.io/badge/SQL%20Server-DB-red)
+![Tailwind](https://img.shields.io/badge/Tailwind-CSS-06b6d4)
 
-Currently, two official plugins are available:
+Çoklu şirket (multi-tenant) yapıda **Admin**, **Şirket Yöneticisi** ve **Çalışan** rollerine sahip; taleplerin ve personel süreçlerinin merkezî olarak yönetildiği bir web uygulaması.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+
+---
+
+## İçindekiler
+- [Özellikler](#özellikler)
+- [Roller](#roller)
+- [Mimari](#mimari)
+- [Kullanılan Teknolojiler](#kullanılan-teknolojiler)
+  
+- [Kurulum](#kurulum)
+  - [Gereksinimler](#gereksinimler)
+  - [Backend Kurulumu](#backend-kurulumu)
+  - [Frontend Kurulumu](#frontend-kurulumu)
+
+---
+
+## Özellikler
+- **Talep Yönetimi:** Çalışanlar talepler oluşturur, durumlarını takip eder.
+- **Çoklu Şirket Desteği:** Birden fazla şirket ve kullanıcı aynı anda yönetilebilir.
+- **Rol Bazlı Yetkilendirme:** Admin, Şirket Yöneticisi, Çalışan.
+- **Temiz Katmanlar:** Onion Architecture ile net sorumluluk ayrımı.
+- **Ölçeklenebilir API:** Bakımı kolay, genişlemeye uygun backend.
+
+## Roller
+- **Admin:** Şirketleri, çalışanları ve sistem ayarlarını yönetir.
+- **Şirket Yöneticisi:** Kendi şirketindeki çalışanları ve talepleri yönetir.
+- **Çalışan:** Kişisel bilgilerini görüntüler; talepler oluşturur ve takip eder.
+
+## Mimari
+Onion Architecture’da domain kuralları merkezde tutulur, bağımlılıklar içten dışa akar:
+
+          [Domain]         
+             ↑
+         [Application]     
+             ↑
+       [Infrastructure]    
+             ↑
+     [Presentation / API]  
+
+
+
+- **Domain:** Varlıklar, değer nesneleri, arayüzler  
+- **Application:** Use case’ler, DTO’lar, servis sözleşmeleri  
+- **Infrastructure:** Veri erişimi (EF Core/Repository), dış servis adaptörleri  
+- **API (Presentation):** HTTP uçları, doğrulama, kimlik/doğrulama
+
+## Kullanılan Teknolojiler
+- **Mimari:** Onion Architecture
+- **Backend API:** C# (.NET), ASP.NET Core  
+- **Frontend:** React.js, Tailwind CSS
+- **Veritabanı:** SQL Server  
+
+
+---
+
+## Kurulum
+
+### Gereksinimler
+- Node.js (Frontend)
+- .NET SDK (Backend)
+- SQL Server (Veritabanı)
+
+### Backend Kurulumu
+```bash
+git clone https://github.com/CAGANZ/IKPro_UI.git
+cd IKPro_UI
+
+# Paketleri yükle
+npm install
+
+# Development server'ı başlatma
+npm start
+
+# Production build için
+npm run build
